@@ -1,0 +1,61 @@
+{% extends 'subbase.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <!-- food section -->
+
+  <section class="food_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our Player
+        </h2>
+      </div>
+
+      <ul class="filters_menu">
+        <li class="active" data-filter="*">All</li>
+        <li data-filter=".cricket">Cricketer</li>
+        <li data-filter=".football">Footballer</li>
+        <li data-filter=".volyball">Vollyball</li>
+        <li data-filter=".kabadi">Kabadi</li>
+      </ul>
+
+      <div class="filters-content">
+        <div class="row grid">
+      {% for obj in playerlist %}
+
+          <div class="col-sm-6 col-lg-4 all {{ obj.type }}">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="{{ obj.dpimage.url }}" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ obj.name }}
+                  </h5>
+                  <p>
+                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                  </p>
+                    <div class="btn-box">
+                      <a href="/profile/{{obj.id}}">
+                        View Profile
+                      </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          View More
+        </a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
