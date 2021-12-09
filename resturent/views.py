@@ -11,11 +11,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-import numpy as np
-import cv2 as cv
-from matplotlib import pyplot as plt
-import sys
-from  PIL  import Image
+
 from django.core.files.storage import FileSystemStorage
 
 
