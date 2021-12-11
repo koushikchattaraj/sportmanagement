@@ -49,16 +49,9 @@ class AboutView(View):
     def get(self, request):
         return render(request, self.template_name)
 
-class BookView(View):
+class PlayersView(View):
 
-    template_name = 'book.html'
-
-    def get(self, request):
-        return render(request, self.template_name)
-
-class MenuView(View):
-
-    template_name = 'menu.html'
+    template_name = 'players.html'
 
     def get(self, request):
         if request.user.is_authenticated:
